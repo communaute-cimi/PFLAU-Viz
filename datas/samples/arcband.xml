@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:PostTerminalLocationRequest xmlns="http://purl.org/dc/terms" xmlns:ns5="http://www.opengis.net/pidflo/1.0" xmlns:ns2="http://www.telecom.gouv.fr/normau/messages" xmlns:ns4="http://www.opengis.net/gml" xmlns:ns3="http://www.telecom.gouv.fr/normau/address">
+	<ns2:PhoneCall>
+		<date>2016-04-21T16:04:07Z</date>
+		<ns2:id>FR000FRTE-20160421-16:04:07.759-33673590000</ns2:id>
+		<ns2:psapPhone>+33235587000</ns2:psapPhone>
+		<ns2:psapId>FR760SAMA</ns2:psapId>
+		<ns3:NDI>+33673590000</ns3:NDI>
+	</ns2:PhoneCall>
+	<ns5:ArcBand srsName="urn:ogc:def:crs:EPSG::4326" ns4:id="Localisation">
+		<ns4:pos>47.9178089 1.8935533</ns4:pos>
+		<ns5:innerRadius uom="urn:ogc:def:uom:EPSG::9001">1661.55</ns5:innerRadius>
+		<ns5:outerRadius uom="urn:ogc:def:uom:EPSG::9001">2215.4</ns5:outerRadius>
+		<ns5:startAngle uom="urn:ogc:def:uom:EPSG::9102">266</ns5:startAngle>
+		<ns5:openingAngle uom="urn:ogc:def:uom:EPSG::9102">120</ns5:openingAngle>
+	</ns5:ArcBand>
+</ns2:PostTerminalLocationRequest>

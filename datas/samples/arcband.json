@@ -1,0 +1,16 @@
+{
+    "PhoneCall": {
+        "date": "ex 2016-04-21T16:04:07Z",
+        "id": "ex FR000FRTE-20160421-16:04:07.759-33673590000",
+        "psapPhone": "ex +33235587000",
+        "psapId": "ex FR760SAMA",
+        "NDI": "ex +33673590000"
+    },
+    "ArcBand": {
+        "pos": "47.9178089 1.8935533",
+        "innerRadius": "1600.55",
+        "outerRadius": "2000.4",
+        "startAngle": "200",
+        "openingAngle": "100"
+    }
+}

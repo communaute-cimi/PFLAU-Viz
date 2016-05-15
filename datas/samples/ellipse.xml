@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326">
+	<gml:exterior>
+		<gml:LinearRing>
+			<gml:posList>47.9178089 1.8935533
+				47.9178089 1.9035533
+				47.9278089 1.9035533
+				47.9078089 1.8935533
+			</gml:posList>
+		</gml:LinearRing>
+	</gml:exterior>
+</gml:Polygon>
