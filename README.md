@@ -2,7 +2,7 @@
 
 **Visualiseur de données issues de la PFLAU**
 
-<img src="/doc/images/header.png" width="800">
+<img src="/doc/imag/header.png" width="800">
 
 ## Introduction
 
