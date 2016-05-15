@@ -9,9 +9,7 @@
 		<style>
 			label {margin-top:10px;}
 		</style>
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="./libs/bootstrap/3.3.6/css/bootstrap.css" />
-		<link rel="stylesheet" href="./libs/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
+		<!-- Les déclations JS et CSS sont à la fin... -->
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -110,7 +108,7 @@
 					<div id="arcband" class="tab-pane fade">
 						<form role="search" id="frm_arcband">
 							<div class="form-group">
-								<label>Latitude (X)</label>
+								<label>Longitude (X)</label>
 								<input type="text" name="x" class="form-control" placeholder="Longitude (x)" value="" />
 								<label>Latitude (Y)</label>
 								<input type="text" name="y" class="form-control" placeholder="Latitude (y)" value="" />
@@ -134,13 +132,9 @@
 						<form role="search" id="frm_polygon">
 							<div class="form-group">
 								<label>Valeurs polygon (Y X Y X Y X...)</label>
-								<textarea name="vals" class="form-control" cols="50" rows="5">48.856578 2.351828 48.863791 2.340954 48.874335 2.343999 48.877666 2.357913 48.870453 2.368786 48.859909 2.365746 48.856578 2.351828</textarea>
+								<textarea name="vals" class="form-control" cols="50" rows="5"></textarea>
 								<label>Description</label>
-								<textarea name="desc" class="form-control" cols="50" rows="5">2013-02-09T15:27:39Z
-FR750SDIS20140123456789012
-+33134511398
-FR750SDIS
-0123344556</textarea>
+								<textarea name="desc" class="form-control" cols="50" rows="5"></textarea>
 							</div>
 							<button type="submit" class="btn btn-default">
 								Submit
@@ -150,7 +144,7 @@ FR750SDIS
 					<div id="ellipse" class="tab-pane fade">
 						<form role="search" id="frm_ellipse">
 							<div class="form-group">
-								<label>Latitude (X)</label>
+								<label>Longitude (X)</label>
 								<input type="text" name="x" class="form-control" placeholder="Longitude (x)" value="" />
 								<label>Latitude (Y)</label>
 								<input type="text" name="y" class="form-control" placeholder="Latitude (y)" value="" />
@@ -178,13 +172,22 @@ FR750SDIS
 		
 		<!-- includes -->
 		<script src="./libs/jquery/jquery-2.2.3.js"></script>
+		
 		<script src="./libs/bootstrap/3.3.6/js/bootstrap.js"></script>
+		<link rel="stylesheet" href="./libs/bootstrap/3.3.6/css/bootstrap.css" />
+		<link rel="stylesheet" href="./libs/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
+		
 		<script src="./libs/leaflet/0.7.7/leaflet-src.js"></script>
 		<link rel="stylesheet" href="./libs/leaflet/0.7.7/leaflet.css" />
 		<script src="./libs/leaflet/plugin/Leaflet.Ellipse/l.ellipse.js"></script>
 		<script src="./libs/arcband.js"></script>
-
+		<script src="./libs/pflau.js"></script>
 		<script type="text/javascript">
+			/*
+			 * Initialisation
+			 */
+			
+			// Activer le premier onglet
             $('#tabs a').click(function(e) {
                 e.preventDefault();
                 $(this).tab('show');
