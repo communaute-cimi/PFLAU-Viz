@@ -11,11 +11,11 @@ La PFLAU (PlateForme de Localisation des Appels d’Urgence) permet de localiser
 
 ## Objectifs
 
-Permettre la représentation de données lorsque l'intégration dans le SI n'a pas été faite...
+Permettre la représentation de données lorsque l'intégration dans le SI n'est pas effective ou possible.
 
 ## Specifications 
 
-Spécifications : http://www.telecom.gouv.fr/normau/
+Spécifications des web services : http://www.telecom.gouv.fr/normau/
 
 ## Remerciements
 
