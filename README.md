@@ -6,8 +6,7 @@
 
 ## Introduction
 
-La PFLAU (PlateForme de Localisation des Appels d’Urgence) permet de localiser les appelants aux services d’urgence.  
-[source](http://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/QGIS_jointure_avec_fichier_externe_cle5beef4.pdf?arg=177828611&cle=3a1f046f0dcb9df9a87a49ae4ab5f1766621b2fc&file=pdf%2FQGIS_jointure_avec_fichier_externe_cle5beef4.pdf)
+La PFLAU (PlateForme de Localisation des Appels d’Urgence) permet de localiser les appelants aux services d’urgence.
 
 ## Objectifs
 
@@ -19,6 +18,12 @@ Spécifications des web services : http://www.telecom.gouv.fr/normau/
 
 ## Remerciements
 
-Merci au Réseau Régional pour l’Aide Médicale Urgente de Haude Normandie (RRAMUHN) pour le code source de l'arcband (Ludovic).  
+Merci au [Réseau Régional pour l’Aide Médicale Urgente de Haute Normandie](http://rramuir.org/) (GCS RRAMUHN) pour le code source de calcul de l'arcband (Ludovic).
+
+## Liens
+
+[Appels vitaux](https://twitter.com/LT_PFLAU) (compte twitter), mise en place de la PFLAU dans un SAMU. https://twitter.com/LT_PFLAU
+Ministère de la santé : [instruction DGOS/R2 no 2015-184 du 2 juin 2015](http://social-sante.gouv.fr/fichiers/bo/2015/15-07/ste_20150007_0000_0033.pdf) relative à la mise en service de la plateforme de localisation des appels d’urgence (PFLAU).
+
 
 
