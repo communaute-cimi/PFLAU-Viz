@@ -16,6 +16,8 @@ Permettre la représentation de données lorsque l'intégration dans le SI n'est
 
 Spécifications des web services : http://www.telecom.gouv.fr/normau/
 
+<img src="/doc/img/sampleWS.png" width="800">
+
 ## Remerciements
 
 Merci au [Réseau Régional pour l’Aide Médicale Urgente de Haute Normandie](http://rramuir.org/) (GCS RRAMUHN) pour le code source de calcul de l'arcband (Ludovic).
