@@ -44,7 +44,7 @@ Spécifications des web services : http://www.telecom.gouv.fr/normau/
 </postTerminalLocation>
 ```
 
-###PolyGon
+###Polygon
 
 ```xml
 
