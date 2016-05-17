@@ -94,12 +94,15 @@ $("#frm_geocoding").submit(function(event) {
     $.getJSON(geocode, function(data) {
         // console.log(data);
         try {
+            console.log(data, data.length);
+            if(data.length == 0) throw "Pas de résultat...";
             lat = data[0].lat;
             lon = data[0].lon;
-            marker = L.marker(L.latLng(lat, lon)).addTo(mymap).bindPopup('<b>Géolocalisation</b>' + "<br />" + data[0].display_name);
+            marker = L.marker(L.latLng(lat, lon)).addTo(mymap).bindPopup('<b>Géolocalisation : </b>' + "<br />" + data[0].display_name);
             mymap.setView(marker.getLatLng());
+            
         } catch(e) {
-            alert(e.message);
+            alert(e);
         }
     });
 });
