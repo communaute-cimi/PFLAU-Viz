@@ -6,22 +6,27 @@ $("#frm_point").submit(function(event) {
     y = $('form#frm_point input[name=y]').val();
     desc = $('form#frm_point textarea[name=desc]').val();
 
-    marker = L.marker(L.latLng(y, x)).addTo(mymap).bindPopup(desc.replace("\n", "<br />"));
+    var textPopup = desc.replace(/\n/g, "</br />");
+
+    marker = L.marker(L.latLng(y, x)).addTo(mymap).bindPopup(textPopup);
     mymap.setView(marker.getLatLng());
 });
 
 // Formulaire arcband
 $("#frm_arcband").submit(function(event) {
-    x = $('form#frm_arcband input[name=x]').val();
-    y = $('form#frm_arcband input[name=y]').val();
-    innerRadius = $('form#frm_arcband input[name=innerRadius]').val();
-    outerRadius = $('form#frm_arcband input[name=outerRadius]').val();
-    startAngle = $('form#frm_arcband input[name=startAngle]').val();
-    openingAngle = $('form#frm_arcband input[name=openingAngle]').val();
-
     event.preventDefault();
+    
+    var x = $('form#frm_arcband input[name=x]').val();
+    var y = $('form#frm_arcband input[name=y]').val();
+    var innerRadius = $('form#frm_arcband input[name=innerRadius]').val();
+    var outerRadius = $('form#frm_arcband input[name=outerRadius]').val();
+    var startAngle = $('form#frm_arcband input[name=startAngle]').val();
+    var openingAngle = $('form#frm_arcband input[name=openingAngle]').val();
+    var desc = $('form#frm_arcband textarea[name=desc]').val();
+    
+    var textPopup = desc.replace(/\n/g, "</br />");
 
-    var polygon = L.polygon(calculateArcPoly(y, x, innerRadius, outerRadius, startAngle, openingAngle, 180)).addTo(mymap);
+    var polygon = L.polygon(calculateArcPoly(y, x, innerRadius, outerRadius, startAngle, openingAngle, 180)).addTo(mymap).bindPopup(textPopup);
 
     mymap.setView(polygon.getBounds().getCenter());
     
@@ -29,12 +34,12 @@ $("#frm_arcband").submit(function(event) {
 
 // Formulaire polygon
 $("#frm_polygon").submit(function(event) {
+    
+    event.preventDefault();
 
-    // Valeurs brutes venant de la PFLAU
     var vals = $('form#frm_polygon textarea[name=vals]').val();
     var desc = $('form#frm_polygon textarea[name=desc]').val();
-
-    event.preventDefault();
+    
     var aVals = vals.split(" ");
     var latLon = new Array(),
         y = 0,
@@ -60,7 +65,10 @@ $("#frm_polygon").submit(function(event) {
 
     }
     // console.log (collection_latLon);
-    polygon = L.polygon(collection_latLon).addTo(mymap).bindPopup(desc.replace("\n", "<br />"));
+    
+    var textPopup = desc.replace(/\n/g, "</br />");
+    
+    polygon = L.polygon(collection_latLon).addTo(mymap).bindPopup(textPopup);
     mymap.setView(polygon.getBounds().getCenter());
 
 });
@@ -77,8 +85,10 @@ $("#frm_ellipse").submit(function(event) {
     semiMinorAxis = $('form#frm_ellipse input[name=semiMinorAxis]').val();
     orientation = $('form#frm_ellipse input[name=orientation]').val();
 
-    console.log(semiMinorAxis);
-    var ellipse = L.ellipse([y, x], [semiMajorAxis, semiMinorAxis], orientation).addTo(mymap).bindPopup(desc.replace("\n", "<br />"));
+    
+    var textPopup = desc.replace(/\n/g, "</br />");
+    // console.log(textPopup);
+    var ellipse = L.ellipse([y, x], [semiMajorAxis, semiMinorAxis], orientation).addTo(mymap).bindPopup(textPopup);
 
     mymap.setView(ellipse.getBounds().getCenter());
 });
