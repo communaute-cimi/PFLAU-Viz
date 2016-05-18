@@ -1,5 +1,36 @@
-var polygon;
-// Formulaire Point
+/*
+ * Gestion des évennements dans la page index
+*/
+    // Variable globale pour la carte
+var mymap,
+    // Calque de données (globale)
+    pflauLayer;
+
+function initCarto() {
+    /*
+    * Initialisation
+    */
+    
+    // console.log(new Date() + 'initCarto');
+
+    // Activer le premier onglet
+    $('#tabs a').click(function(e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+
+    pflauLayer = new L.LayerGroup();
+
+    mymap = L.map('mapid').setView([47.9178, 1.8935], 13);
+
+    L.tileLayer('https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom : 18,
+        attribution : 'Données : contributeurs <a href="http://openstreetmap.org">OpenStreetMap</a>'
+    }).addTo(mymap);
+}
+
+
+// Formulaire point
 $("#frm_point").submit(function(event) {
     event.preventDefault();
     x = $('form#frm_point input[name=x]').val();
@@ -46,7 +77,7 @@ $("#frm_polygon").submit(function(event) {
         x = 0;
     var collection_latLon = new Array();
 
-    // La donnée brute, une série de valeurs sans séparateur
+    // La donnée brute : une série de valeurs sans séparateur
     // Récupérer chaque série de x,y et créer une géométrie LeafLet
     for (var i = 0; i < aVals.length; i++) {
         // console.log (aVals[i]);
@@ -62,7 +93,6 @@ $("#frm_polygon").submit(function(event) {
             // console.log (latLon);
             collection_latLon.push(L.latLng(y, x));
         }
-
     }
     // console.log (collection_latLon);
     
@@ -93,11 +123,10 @@ $("#frm_ellipse").submit(function(event) {
     mymap.setView(ellipse.getBounds().getCenter());
 });
 
-// Géocodage sur OSM (il faut que le cross domain soit accepté)
+// Géocodage sur nominatim (il faut que le cross domain soit accepté)
 $("#frm_geocoding").submit(function(event) {
     event.preventDefault();
 
-    // we are using MapQuest's Nominatim service
     place = $('form#frm_geocoding input[name=place]').val();
     var geocode = ' http://nominatim.openstreetmap.org/search?format=json&q=' + place;
 
@@ -117,6 +146,7 @@ $("#frm_geocoding").submit(function(event) {
     });
 });
 
+// Charger des données exemple pour les différentes géométries
 $("#frm_load_samples_data").submit(function(event) {
     event.preventDefault();
     
@@ -205,15 +235,3 @@ $("#frm_load_samples_data").submit(function(event) {
         }
     });     
 });
-
-function displayPoint(x, y) {
-    // console.log(x,y);
-    try {
-        L.marker([y, x]).addTo(mymap);
-    } catch (e) {
-        console.error(e.message);
-        // Etouffer l'erreur :
-        // Cannot read property 'lat' of null
-    }
-
-}

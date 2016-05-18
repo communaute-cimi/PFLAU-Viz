@@ -15,7 +15,7 @@
 		</style>
 		<!-- Les déclations JS et CSS sont à la fin... -->
 	</head>
-	<body>
+	<body onload="initCarto();">
 		
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -231,26 +231,5 @@
 		<script src="./libs/leaflet/plugin/Leaflet.Ellipse/l.ellipse.js"></script>
 		<script src="./libs/arcband.js"></script>
 		<script src="./libs/pflau.js"></script>
-		<script type="text/javascript">
-			/*
-			 * Initialisation
-			 */
-			
-			// Activer le premier onglet
-            $('#tabs a').click(function(e) {
-                e.preventDefault();
-                $(this).tab('show');
-            });
-            
-			pflauLayer = new L.LayerGroup(); 
-			
-            var mymap = L.map('mapid').setView([ 47.9178, 1.8935], 13);
-			
-            L.tileLayer('https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-                maxZoom : 18,
-                attribution : 'Données : contributeurs <a href="http://openstreetmap.org">OpenStreetMap</a>'
-            }).addTo(mymap);
-
-		</script>
 	</body>
 </html>
