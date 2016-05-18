@@ -8,6 +8,10 @@
 		<title>PFLAU reader</title>
 		<style>
 			label {margin-top:10px;}
+			div.btn-submit {
+				margin-top:10px;
+				text-align:right;
+			}
 		</style>
 		<!-- Les déclations JS et CSS sont à la fin... -->
 	</head>
@@ -44,18 +48,21 @@
 						</li>
 					</ul>
 					<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-						<div class="modal-dialog modal-sm">
+						<div class="modal-dialog modal-lg">
 							<div class="modal-content">
 								<div style="padding:10px;">
 								<h2>
 									PFLAU Viz 
 								</h2>
+								<div>
 								(v 0.0.1)
+								</div>
+								<br/>
 								<p>
 									<b>Visualisation des données de localisation issues de la PFLAU</b>
 								</p>
 								<p>
-									Merci au <a href="http://rramuir.org/">Réseau Régional pour l’Aide Médicale Urgente de Haute Normandie</a> (GCS RRAMUHN) pour le code source de l'arcband (Ludovic).  
+									Merci au <a href="http://rramuir.org/">Réseau Régional pour l’Aide Médicale Urgente de Haute Normandie</a> (GCS RRAMUHN) pour le code source de l'arcband.  
 								</p>
 								</div>
 							</div>
@@ -91,73 +98,117 @@
 					<div id="point" class="tab-pane fade in active">
 						<form role="search" id="frm_point">
 							<div class="form-group">
-								<label>Longitude (X)</label>
-								<input type="text" name="x" class="form-control" placeholder="Longitude (x)" value="" />
-								<label>Latitude (Y)</label>
-								<input type="text" name="y" class="form-control" placeholder="Latitude (y)" value="" />
-								<label>Description</label>
-								<textarea name="desc" class="form-control" cols="50" rows="4"></textarea>								
+								<div class="col-md-6">
+									<label>Longitude (X)</label>
+									<input type="text" name="x" class="form-control" placeholder="Longitude (x)" value="" />	
+								</div>
+								<div class="col-md-6">
+									<label>Latitude (Y)</label>
+									<input type="text" name="y" class="form-control" placeholder="Latitude (y)" value="" />									
+								</div>								
+								<div class="col-md-12">
+									<label>Description</label>
+									<textarea name="desc" class="form-control" cols="50" rows="4"></textarea>
+								</div>	
 							</div>
-							<button type="submit" class="btn btn-default">
-								Afficher
-							</button>
+							<div class="col-md-12 btn-submit">
+								<button type="submit" class="btn btn-default">
+									Afficher
+								</button>
+							</div>
 						</form>
 					</div>
 					<div id="arcband" class="tab-pane fade">
 						<form role="search" id="frm_arcband">
 							<div class="form-group">
-								<label>Longitude (X)</label>
-								<input type="text" name="x" class="form-control" placeholder="Longitude (x)" value="" />
-								<label>Latitude (Y)</label>
-								<input type="text" name="y" class="form-control" placeholder="Latitude (y)" value="" />
-								<label>innerRadius</label>
-								<input type="text" name="innerRadius" class="form-control" placeholder="innerRadius" value=""/>
-								<label>outerRadius</label>
-								<input type="text" name="outerRadius" class="form-control" placeholder="outerRadius" value="" />
-								<label>startAngle</label>
-								<input type="text" name="startAngle" class="form-control" placeholder="startAngle" value="" />
-								<label>openingAngle</label>
-								<input type="text" name="openingAngle" class="form-control" placeholder="openingAngle" value="" />
-								<label>Description</label>
-								<textarea name="desc" class="form-control" cols="50" rows="4"></textarea>								
+								<div class="col-md-6">
+									<label>Longitude (X)</label>
+									<input type="text" name="x" class="form-control" placeholder="Longitude (x)" value="" />	
+								</div>
+								<div class="col-md-6">
+									<label>Latitude (Y)</label>
+									<input type="text" name="y" class="form-control" placeholder="Latitude (y)" value="" />									
+								</div>
+								<div class="col-md-6">
+									<label>innerRadius</label>
+									<input type="text" name="innerRadius" class="form-control" placeholder="innerRadius" value=""/>	
+								</div>
+								<div class="col-md-6">
+									<label>outerRadius</label>
+									<input type="text" name="outerRadius" class="form-control" placeholder="outerRadius" value="" />								
+								</div>
+								<div class="col-md-6">
+									<label>startAngle</label>
+									<input type="text" name="startAngle" class="form-control" placeholder="startAngle" value="" />								
+								</div>
+								<div class="col-md-6">
+									<label>openingAngle</label>
+								<input type="text" name="openingAngle" class="form-control" placeholder="openingAngle" value="" />	
+								</div>
+
+								<div class="col-md-12">
+									<label>Description</label>
+									<textarea name="desc" class="form-control" cols="50" rows="4"></textarea>
+								</div>								
 							</div>
-							<button type="submit" class="btn btn-default">
-								Afficher
-							</button>
+							<div class="col-md-12 btn-submit" style="margin-top:10px;">
+								<button type="submit" class="btn btn-default">
+									Afficher
+								</button>
+							</div>
 						</form>
 					</div>
 					<div id="polygon" class="tab-pane fade">
 						<form role="search" id="frm_polygon">
 							<div class="form-group">
-								<label>Valeurs polygon (Y X Y X Y X...)</label>
-								<textarea name="vals" class="form-control" cols="50" rows="5"></textarea>
-								<label>Description</label>
-								<textarea name="desc" class="form-control" cols="50" rows="5"></textarea>
+								<div class="col-md-12">
+									<label>Valeurs polygon (Y X Y X Y X...)</label>
+									<textarea name="vals" class="form-control" cols="50" rows="5"></textarea>
+									<label>Description</label>
+									<textarea name="desc" class="form-control" cols="50" rows="5"></textarea>
+								</div>
 							</div>
-							<button type="submit" class="btn btn-default">
-								Afficher
-							</button>
+							<div class="col-md-12 btn-submit" style="margin-top:10px;">
+								<button type="submit" class="btn btn-default">
+									Afficher
+								</button>
+							</div>
 						</form>
 					</div>
 					<div id="ellipse" class="tab-pane fade">
 						<form role="search" id="frm_ellipse">
 							<div class="form-group">
-								<label>Longitude (X)</label>
-								<input type="text" name="x" class="form-control" placeholder="Longitude (x)" value="" />
-								<label>Latitude (Y)</label>
-								<input type="text" name="y" class="form-control" placeholder="Latitude (y)" value="" />
-								<label>semiMajorAxis</label>
-								<input type="text" name="semiMajorAxis" class="form-control" placeholder="semiMajorAxis" value="" />
-								<label>semiMinorAxis</label>
-								<input type="text" name="semiMinorAxis" class="form-control" placeholder="semiMinorAxis" value="" />
-								<label>orientation</label>
-								<input type="text" name="orientation" class="form-control" placeholder="orientation" value="" />
-								<label>Description</label>
-								<textarea name="desc" class="form-control" cols="50" rows="4"></textarea>								
+								<div class="col-md-6">
+									<label>Longitude (X)</label>
+									<input type="text" name="x" class="form-control" placeholder="Longitude (x)" value="" />
+								</div>
+								<div class="col-md-6">
+									<label>Latitude (Y)</label>
+									<input type="text" name="y" class="form-control" placeholder="Latitude (y)" value="" />
+								</div>
+								<div class="col-md-6">
+									<label>semiMajorAxis</label>
+									<input type="text" name="semiMajorAxis" class="form-control" placeholder="semiMajorAxis" value="" />
+								</div>
+								<div class="col-md-6">
+									<label>semiMinorAxis</label>
+									<input type="text" name="semiMinorAxis" class="form-control" placeholder="semiMinorAxis" value="" />
+								</div>
+								<div class="col-md-6">
+									<label>orientation</label>
+									<input type="text" name="orientation" class="form-control" placeholder="orientation" value="" />
+								</div>
+
+								<div class="col-md-12">
+									<label>Description</label>
+									<textarea name="desc" class="form-control" cols="50" rows="4"></textarea>
+								</div>
 							</div>
-							<button type="submit" class="btn btn-default">
-								Afficher
-							</button>
+							<div class="col-md-12 btn-submit" style="margin-top:10px;">
+								<button type="submit" class="btn btn-default">
+									Afficher
+								</button>
+							</div>
 						</form>
 					</div>
 				</div>

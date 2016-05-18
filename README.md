@@ -107,7 +107,7 @@ Spécifications des web services : http://www.telecom.gouv.fr/normau/
 
 ## Remerciements
 
-Merci au [Réseau Régional pour l’Aide Médicale Urgente de Haute Normandie](http://rramuir.org/) (GCS RRAMUHN) pour le code source de calcul de l'arcband (Ludovic).
+Merci au [Réseau Régional pour l’Aide Médicale Urgente de Haute Normandie](http://rramuir.org/) (GCS RRAMUHN) pour le code source de calcul de l'arcband.
 
 ## Liens
 
