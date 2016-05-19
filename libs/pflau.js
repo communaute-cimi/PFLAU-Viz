@@ -20,15 +20,38 @@ function initCarto() {
     });
 
     pflauLayer = new L.LayerGroup();
-
+    
     mymap = L.map('mapid').setView([47.9178, 1.8935], 13);
-
-    L.tileLayer('https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        
+    var osmFr = L.tileLayer('https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
         maxZoom : 18,
         attribution : 'Données : contributeurs <a href="http://openstreetmap.org">OpenStreetMap</a>'
     }).addTo(mymap);
-}
+    
+    var osmOrg = L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom : 18,
+        attribution : 'Données : contributeurs <a href="http://openstreetmap.org">OpenStreetMap</a>'
+    }).addTo(mymap);
+    
+    // IGN
+    var ignKey = "mu2al5oy08r9e9xzamilui2e";
+    var layerIGNScanStd = "GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD";
+    var url = "http://wxs.ign.fr/" + ignKey + "/geoportail/wmts";
+   
+    var ign = new L.TileLayer.WMTS(url, {
+        layer : layerIGNScanStd,
+        style : "normal",
+        tilematrixSet : "PM",
+        format : "image/jpeg",
+        attribution : "<a href='https://github.com/mylen/leaflet.TileLayer.WMTS'>GitHub</a>&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }).addTo(mymap); 
 
+
+    
+    
+    mymap.addLayer(pflauLayer);
+    L.control.layers({"IGN France" : ign, "OpenStreetMap": osmOrg, "OpenStreetMap France" : osmFr}).addTo(mymap);
+}
 
 // Formulaire point
 $("#frm_point").submit(function(event) {
@@ -40,6 +63,7 @@ $("#frm_point").submit(function(event) {
     var textPopup = desc.replace(/\n/g, "</br />");
 
     marker = L.marker(L.latLng(y, x)).addTo(mymap).bindPopup(textPopup);
+    console.log(marker.addTo(pflauLayer));
     mymap.setView(marker.getLatLng());
 });
 
