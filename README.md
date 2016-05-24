@@ -10,7 +10,7 @@ La PFLAU (PlateForme de Localisation des Appels d’Urgence) permet de localiser
 
 ## Objectif
 
-Permettre la représentation de données lorsque l'intégration dans le SI n'est pas effective ou possible.
+Permettre la représentation de données lorsque l'intégration de la PFLAU dans le SI n'est pas effective ou possible.
 
 ## Specifications 
 
